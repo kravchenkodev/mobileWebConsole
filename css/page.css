@@ -1,0 +1,13 @@
+﻿
+html, body {
+    background: #303030;
+}
+
+h3 {
+    color: #999;
+}
+
+hr {
+    border-bottom: none;
+    border-top: 1px solid #111;
+}
