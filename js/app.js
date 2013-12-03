@@ -1,6 +1,7 @@
 // TODO: avoid jQuery
 // TODO: solved circular references
 // TODO: log history
+// TODO: true prototype chain view
 
 $('#console').on('click', '.collapsable > .collapsable-header', function(){
     $(this).siblings('.collapsable-body').slideToggle('fast')
@@ -186,7 +187,8 @@ function renderArray(array){
 }
 
 function renderObject(object){
-    var view = ''
+    var view = '',
+        proto = {}
 
     view += templates['object']
 
@@ -195,8 +197,12 @@ function renderObject(object){
             view += renderProperty(i, object[i])
         }
         else {
-            
+            proto[i] = object[i]
         }
+    }
+
+    if(Object.keys(proto).length){
+        view += renderProperty('__proto__', proto)
     }
 
     view += templates['object-end']
