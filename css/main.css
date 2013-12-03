@@ -1,0 +1,125 @@
+#console {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  background: #f5f2f0;
+}
+
+#console .root, 
+#console .html-value{
+  margin-left:20px;
+  font-style: italic;
+  font-family: Consolas, Monaco, 'Andale Mono', monospace;
+}
+
+#console .collapsable-header .icon{
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#console .collapsable-header.rotated .icon {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+#console .root .plain, 
+#console .root .collapsable, 
+#console .html-value .plain, 
+#console .html-value .collapsable{
+  list-style: none !important;
+}
+
+#console .collapsable{
+  margin-left: -20px;
+  cursor: pointer;
+}
+
+#console .collapsable li{
+  padding-left: 13px;
+}
+
+#console .collapsable-body{
+  margin-left: 17px;
+}
+
+#console .punctuation {
+  color: #999;
+}
+
+#console .property {
+  color:#633c8f;
+}
+
+#console .property.object-value, .property.array-value{
+  color: #444;
+}
+
+#console .number-value, .bool-value {
+  color: #905;
+  padding-left: 5px;
+}
+
+#console .string-value {
+  color: #690;
+  padding-left: 5px;
+}
+
+#console .regexp-value {
+  color: #e90;
+  padding-left: 5px;
+}
+
+#console .null-value, .undefind-value {
+  color: #07a;
+  padding-left: 5px;
+}
+
+/*
+===========================
+ HTML-node render styles
+===========================
+*/
+
+#console .html-value{
+  margin-left:0px;
+}
+
+#console .html-value .collapsable{
+  margin-left: 0px;
+}
+
+#console .html-value .collapsable .plain{
+  border-left: 1px dotted #999;
+}
+
+#console .html-value .collapsable .collapsable{
+  padding-left: 0px;
+  border-left: 1px dotted #999;
+}
+
+#console .root > .close-tag{
+  padding-left: 14px;
+}
+
+#console .collapsable .plain.close-tag{
+  border-left:none;
+  padding-left: 0px;
+}
+
+#console .tag {
+  color: #905;
+}
+
+#console .attr-name{
+  color: #690;
+}
+
+#console .attr-value{
+  color: #07a;
+}
