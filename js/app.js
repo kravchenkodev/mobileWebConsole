@@ -34,8 +34,8 @@ var templates = {
 		'tag-start'				: '<span class="punctuation">&lt;</span>',
 		'tag-end'				: '<span class="punctuation">&gt;</span>',
 		'plain-close-tag'		: '<span class="punctuation">&lt;</span><span class="punctuation">/</span><span class="tag">{ tagName }</span><span class="punctuation">&gt;</span>',
-		'tag-name'				: '<span class="tag">{ tagName }</span> ',
-		'tag-attr'				: '<span class="attr-name">{ attrName }=</span><span class="punctuation">"</span><span class="attr-value">{ attrValue }</span><span class="punctuation">"</span>',
+		'tag-name'				: '<span class="tag">{ tagName }</span>',
+		'tag-attr'				: ' <span class="attr-name">{ attrName }=</span><span class="punctuation">"</span><span class="attr-value">{ attrValue }</span><span class="punctuation">"</span>',
 		'tag-content'			: '<span class="tag-content">{ tagContent }</span>',
 		'collapsable-tag-start'	: '<li class="collapsable"><div class="collapsable-header"><i class="icon icon-chevron-right"></i>',
 		'collapsable-open-node'	: '</div><ul class="collapsable-body"  style="display: none;">',
@@ -285,3 +285,14 @@ console.log({
 console.log(42)
 console.log(document.getElementById('console'))
 console.log($('#console'))
+
+
+var ds = [{
+	property1: 42,
+	property2: 'string',
+	property3: [{
+		0: 'ewre',
+		1: null,
+		2: true
+	}]
+}]

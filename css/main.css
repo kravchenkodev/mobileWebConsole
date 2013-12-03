@@ -1,125 +1,256 @@
-#console {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  background: #f5f2f0;
-}
+/*
+    
+    ***
+    
+    Console for mobile devices
 
-#console .root, 
-#console .html-value{
-  margin-left:20px;
-  font-style: italic;
-  font-family: Consolas, Monaco, 'Andale Mono', monospace;
-}
+    ---
 
-#console .collapsable-header .icon{
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
+    Elements description:
 
-#console .collapsable-header.rotated .icon {
-  -moz-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
+    #console - root element
+    .root
+    .collapsible
 
-#console .root .plain, 
-#console .root .collapsable, 
-#console .html-value .plain, 
-#console .html-value .collapsable{
-  list-style: none !important;
-}
 
-#console .collapsable{
-  margin-left: -20px;
-  cursor: pointer;
-}
+    ---
 
-#console .collapsable li{
-  padding-left: 13px;
-}
+    TODO List
 
-#console .collapsable-body{
-  margin-left: 17px;
-}
+    1. Implement CSS Animation
+    2. Colors scheme definition
+    3. Change chevron icon to HTML triangle
+    
+    ***    
+    
+*/
 
-#console .punctuation {
-  color: #999;
-}
-
-#console .property {
-  color:#633c8f;
-}
-
-#console .property.object-value, .property.array-value{
-  color: #444;
-}
-
-#console .number-value, .bool-value {
-  color: #905;
-  padding-left: 5px;
-}
-
-#console .string-value {
-  color: #690;
-  padding-left: 5px;
-}
-
-#console .regexp-value {
-  color: #e90;
-  padding-left: 5px;
-}
-
-#console .null-value, .undefind-value {
-  color: #07a;
-  padding-left: 5px;
-}
 
 /*
+    -------------------
+    Common Styles -----
+    -------------------
+*/
+
+
+
+#console {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+    #console .root,
+    #console .html-value {
+        margin-left: 20px;
+    }
+
+    #console .collapsable-header .icon {
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+    #console .collapsable-header.rotated .icon {
+        -moz-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+    #console .root .plain,
+    #console .root .collapsable,
+    #console .html-value .plain,
+    #console .html-value .collapsable {
+        list-style: none !important;
+    }
+
+    #console .collapsable {
+        margin-left: -20px;
+        cursor: pointer;
+    }
+
+        #console .collapsable li {
+            padding-left: 13px;
+        }
+
+    #console .collapsable-body {
+        margin-left: 17px;
+    }
+
+    #console .punctuation {
+        color: #999;
+    }
+
+    #console .property {
+        color: #633c8f;
+    }
+
+        #console .property.object-value, .property.array-value {
+            color: #444;
+        }
+
+    #console .number-value, .bool-value {
+        color: #905;
+        padding-left: 5px;
+    }
+
+    #console .string-value {
+        color: #690;
+        padding-left: 5px;
+    }
+
+    #console .regexp-value {
+        color: #e90;
+        padding-left: 5px;
+    }
+
+    #console .null-value, .undefind-value {
+        color: #07a;
+        padding-left: 5px;
+    }
+
+    /*
 ===========================
  HTML-node render styles
 ===========================
 */
 
-#console .html-value{
-  margin-left:0px;
+    #console .html-value {
+        margin-left: 0px;
+    }
+
+        #console .html-value .collapsable {
+            margin-left: 0px;
+        }
+
+            #console .html-value .collapsable .plain {
+                border-left: 1px dotted #999;
+            }
+
+            #console .html-value .collapsable .collapsable {
+                padding-left: 0px;
+                border-left: 1px dotted #999;
+            }
+
+    #console .root > .close-tag {
+        padding-left: 14px;
+    }
+
+    #console .collapsable .plain.close-tag {
+        border-left: none;
+        padding-left: 0px;
+    }
+
+    #console .tag {
+        color: #905;
+    }
+
+    #console .tag-content {
+        color: #fff;
+    }
+
+    #console .attr-name {
+        color: #690;
+    }
+
+    #console .attr-value {
+        color: #07a;
+    }
+
+
+/*
+
+    ***
+
+    Default Theme
+    
+    ***    
+    
+*/
+
+#console {
+    background: #eee;
 }
 
-#console .html-value .collapsable{
-  margin-left: 0px;
-}
+    #console .root,
+    #console .html-value {
+        font-style: italic;
+        font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    }
 
-#console .html-value .collapsable .plain{
-  border-left: 1px dotted #999;
-}
+/*
 
-#console .html-value .collapsable .collapsable{
-  padding-left: 0px;
-  border-left: 1px dotted #999;
-}
+    ***
 
-#console .root > .close-tag{
-  padding-left: 14px;
-}
+    Visual Studio Dark Theme
+    
+    ***    
+    
+*/
 
-#console .collapsable .plain.close-tag{
-  border-left:none;
-  padding-left: 0px;
-}
+    #console.vs-dark {
+        background: #303030;
+    }
 
-#console .tag {
-  color: #905;
-}
+        #console.vs-dark .root,
+        #console.vs-dark .html-value {
+            font-style: normal;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        }
 
-#console .attr-name{
-  color: #690;
-}
+        #console.vs-dark .punctuation {
+            color: #999;
+        }
 
-#console .attr-value{
-  color: #07a;
-}
+        /*
+            JS-node render styles
+        */
+
+        #console.vs-dark .property {
+            color: #633c8f;
+        }
+
+            #console.vs-dark .property.object-value, .property.array-value {
+                color: #444;
+            }
+
+        #console.vs-dark .number-value, .bool-value {
+            color: rgb(184, 215, 163);
+        }
+
+        #console.vs-dark .string-value {
+            color: rgb(214, 157, 133);
+        }
+
+        #console.vs-dark .regexp-value {
+            color: #e90;
+        }
+
+        #console.vs-dark .null-value, .undefind-value {
+            color: #07a;
+        }
+
+        /*
+            HTML-node render styles
+        */
+
+        #console.vs-dark .html-value .collapsable .plain,
+        #console.vs-dark .html-value .collapsable .collapsable {
+            border-left: 1px solid #404040;
+        }
+
+        #console.vs-dark .tag {
+            color: rgb(86, 156, 214);
+        }
+
+        #console.vs-dark .attr-name {
+            color: rgb(156, 220, 254);
+        }
+
+        #console.vs-dark .attr-value {
+            color: rgb(220, 220, 220);
+        }
