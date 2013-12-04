@@ -32,8 +32,6 @@
     -------------------
 */
 
-
-
 #console {
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -45,7 +43,27 @@
         margin-left: 20px;
     }
 
-    #console .collapsable-header .icon {
+    #console .collapsable-header::before {
+        display: inline-block;
+        float: left;
+        margin: 5px 8px 0 0;
+        width: 10px;
+        height: 10px;
+        content: "+";
+        
+        border: 1px solid #909090;
+
+        font-size: 12px;
+        color: #909090;
+        text-align: center;
+        line-height: 10px;
+    }
+
+    #console .collapsable-header.rotated::before {
+        content: "-";
+    }
+
+    /*#console .collapsable-header .icon {
         -webkit-transition: all 0.3s;
         -moz-transition: all 0.3s;
         -ms-transition: all 0.3s;
@@ -59,7 +77,7 @@
         -o-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
         transform: rotate(90deg);
-    }
+    }*/
 
     #console .root .plain,
     #console .root .collapsable,
@@ -193,7 +211,7 @@
 */
 
     #console.vs-dark {
-        background: #303030;
+        background: rgb(30, 30, 30);
     }
 
         #console.vs-dark .root,
@@ -210,15 +228,12 @@
             JS-node render styles
         */
 
-        #console.vs-dark .property {
-            color: #633c8f;
-        }
-
-            #console.vs-dark .property.object-value, .property.array-value {
-                color: #444;
+            #console.vs-dark .property.object-value, 
+            #console.vs-dark .property.array-value {
+                color: rgb(87, 166, 74);
             }
 
-        #console.vs-dark .number-value, .bool-value {
+        #console.vs-dark .number-value {
             color: rgb(184, 215, 163);
         }
 
@@ -227,11 +242,20 @@
         }
 
         #console.vs-dark .regexp-value {
-            color: #e90;
+            color: rgb(154, 83, 52);
         }
 
-        #console.vs-dark .null-value, .undefind-value {
-            color: #07a;
+        
+        #console.vs-dark .property,
+        #console.vs-dark .function-value {
+            color: rgb(220, 220, 220);
+        }
+
+        #console.vs-dark .bool-value,
+        #console.vs-dark .null-value,
+        #console.vs-dark .undefined-value,
+        #console.vs-dark .function-wrap {
+            color: rgb(86, 156, 214);
         }
 
         /*
