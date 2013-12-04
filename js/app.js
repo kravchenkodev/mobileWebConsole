@@ -27,6 +27,7 @@ var templates = {
         'object-end'                     : '</ul>',
         'collapsable-start'              : '<ul class="root"><li class="collapsable"><div class="collapsable-header"><i class="icon icon-chevron-right"></i>',
         'collapsable-end'                : '</li></ul>',
+        'function'                       : '<span class="function-value"><span class="function-wrap">function</span> { value }</span>',
 
         // for HTMLNodes
 
@@ -215,7 +216,7 @@ function renderPrimitive(value){
         case isNumber(value)  : return compile(templates['number'], {value : value})
         case isRegExp(value)  : return compile(templates['regexp'], {value : value})
         case isBool(value)    : return compile(templates['bool'], {value : value})
-        case isFunction(value): return value.toString().replace(/\n/gi, '').replace(/\{.+\}/, '{ ... }')
+        case isFunction(value): return compile(templates['function'], { value: value.toString().replace(/\n/gi, '').replace(/\{.+\}/, '{ ... }').replace(/(function)/, '') })
         case isNull(value)    : return templates['null']
         case isUndefind(value): return templates['undefind']
 
